@@ -15,12 +15,12 @@ const filtroTipo = document.getElementById("filtroTipo");
 const filtroPeriodo = document.getElementById("filtroPeriodo");
 
 const urls = {
-  rutas: "rutas.geojson",
-  paradas: "paradas.geojson",
-  zonas: "zonas.geojson",
-  red: "red_vial.geojson",
-  deseo: "lineas_deseo.geojson",
-  od: "matriz_od.geojson"
+  rutas: "./rutas.geojson",
+  paradas: "./paradas.geojson",
+  zonas: "./zonas.geojson",
+  red: "./red_vial.geojson",
+  deseo: "./lineas_deseo.geojson",
+  od: "./matriz_od.geojson"
 };
 
 const datos = {};
