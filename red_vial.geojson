@@ -1,0 +1,89 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "V01",
+        "nombre": "Eje vial 1",
+        "tipo": "Arterial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.18,
+            19.414
+          ],
+          [
+            -99.13,
+            19.414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "V02",
+        "nombre": "Avenida Norte-Sur",
+        "tipo": "Arterial"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.166,
+            19.38
+          ],
+          [
+            -99.166,
+            19.45
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "V03",
+        "nombre": "Calle Centro",
+        "tipo": "Colectora"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.176,
+            19.425
+          ],
+          [
+            -99.135,
+            19.425
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "V04",
+        "nombre": "Vialidad Oriente",
+        "tipo": "Colectora"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.155,
+            19.385
+          ],
+          [
+            -99.155,
+            19.445
+          ]
+        ]
+      }
+    }
+  ]
+}

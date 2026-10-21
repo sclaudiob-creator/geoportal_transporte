@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "P01",
+        "nombre": "Parada Centro",
+        "zona": "Z01",
+        "pasajeros_dia": 420
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.166,
+          19.414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "P02",
+        "nombre": "Parada Norte",
+        "zona": "Z02",
+        "pasajeros_dia": 310
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.164,
+          19.435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "P03",
+        "nombre": "Parada Sur",
+        "zona": "Z03",
+        "pasajeros_dia": 250
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.166,
+          19.394
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "P04",
+        "nombre": "Parada Oriente",
+        "zona": "Z04",
+        "pasajeros_dia": 390
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.143,
+          19.414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "P05",
+        "nombre": "Intercambio Central",
+        "zona": "Z01",
+        "pasajeros_dia": 510
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.158,
+          19.414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "P06",
+        "nombre": "Parada Alameda",
+        "zona": "Z01",
+        "pasajeros_dia": 280
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.171,
+          19.421
+        ]
+      }
+    }
+  ]
+}

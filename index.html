@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geoportal de Movilidad</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Geoportal de movilidad</h1>
+      <p>Red de transporte · Demanda · Análisis espacial</p>
+    </div>
+    <div class="header-tag">DEMO · DATOS SINTÉTICOS</div>
+  </header>
+
+  <main class="layout">
+    <section class="map-panel panel">
+      <div class="section-heading">
+        <div><h2>Mapa interactivo</h2><p>Selecciona una ruta, parada, zona o conexión OD.</p></div>
+        <button id="btnExtender" class="secondary">Ver todas las capas</button>
+      </div>
+
+      <div class="toolbar">
+        <label>Zona
+          <select id="filtroZona">
+            <option value="TODAS">Todas las zonas</option>
+          </select>
+        </label>
+        <label>Tipo de análisis
+          <select id="filtroTipo">
+            <option value="TODOS">Todos los registros</option>
+            <option value="RUTAS">Rutas</option>
+            <option value="PARADAS">Paradas</option>
+            <option value="DEMANDA">Líneas de deseo / OD</option>
+          </select>
+        </label>
+        <label>Periodo
+          <select id="filtroPeriodo">
+            <option value="TODOS">Todos los periodos</option>
+            <option value="AM">Punta mañana</option>
+            <option value="MD">Mediodía</option>
+            <option value="PM">Punta tarde</option>
+            <option value="EV">Noche</option>
+          </select>
+        </label>
+      </div>
+
+<div class="route-selector">
+  <label for="buscarRuta">Buscar ruta por nombre</label>
+  <input
+    type="search"
+    id="buscarRuta"
+    placeholder="Ej. Ruta Centro-Norte"
+  />
+ <label for="selectorRuta">Seleccionar ruta</label>
+  <select id="selectorRuta">
+    <option value="">Selecciona una ruta...</option>
+  </select>
+
+  <button id="limpiarRuta" type="button">
+    Limpiar selección
+  </button>
+</div>
+
+      <div id="mapa"></div>
+      <div class="map-footer">
+        <span id="estado">Cargando capas…</span>
+        <span id="seleccionActual">Selección: ninguna</span>
+      </div>
+    </section>
+
+    <aside class="side-panel">
+      <section class="panel">
+        <div class="section-heading"><div><h2>Capas</h2><p>Activa o desactiva información del mapa.</p></div></div>
+        <div class="layer-list">
+          <label><input type="checkbox" data-layer="zonas" checked> <span class="swatch zonas"></span> Zonas</label>
+          <label><input type="checkbox" data-layer="red" checked> <span class="swatch red"></span> Red vial</label>
+          <label><input type="checkbox" data-layer="rutas" checked> <span class="swatch rutas"></span> Rutas</label>
+          <label><input type="checkbox" data-layer="deseo" checked> <span class="swatch deseo"></span> Líneas de deseo</label>
+          <label><input type="checkbox" data-layer="od" checked> <span class="swatch od"></span> Matriz origen-destino</label>
+          <label><input type="checkbox" data-layer="paradas" checked> <span class="swatch paradas"></span> Paradas</label>
+        </div>
+      </section>
+
+
+<section class="panel" id="fichaRuta">
+  <div class="section-heading">
+    <div>
+      <h2>Características de la ruta</h2>
+      <p id="rutaSubtitulo">Selecciona una ruta para consultar sus datos.</p>
+    </div>
+  </div>
+
+  <div class="ficha-grid">
+    <div class="dato-ruta">
+      <span>Identificador</span>
+      <strong id="rutaId">—</strong>
+    </div>
+
+    <div class="dato-ruta">
+      <span>Longitud (km)</span>
+      <strong id="rutaLongitud">—</strong>
+    </div>
+
+    <div class="dato-ruta">
+      <span>Tipo de servicio</span>
+      <strong id="rutaTipo">—</strong>
+    </div>
+
+    <div class="dato-ruta">
+      <span>Estado operativo</span>
+      <strong id="rutaEstado">—</strong>
+    </div>
+
+    <div class="dato-ruta">
+      <span>Frecuencia (min)</span>
+      <strong id="rutaFrecuencia">—</strong>
+    </div>
+
+    <div class="dato-ruta">
+      <span>Flota asignada</span>
+      <strong id="rutaFlota">—</strong>
+    </div>
+
+    <div class="dato-ruta">
+      <span>Viajes registrados</span>
+      <strong id="rutaViajes">—</strong>
+    </div>
+
+    <div class="dato-ruta">
+      <span>Pasajeros registrados</span>
+      <strong id="rutaPasajeros">—</strong>
+    </div>
+  </div>
+
+  <div class="dato-ruta terminales">
+    <span>Terminal de origen</span>
+    <strong id="rutaOrigen">—</strong>
+  </div>
+
+  <div class="dato-ruta terminales">
+    <span>Terminal de destino</span>
+    <strong id="rutaDestino">—</strong>
+  </div>
+</section>
+
+
+      <section class="kpi-grid">
+        <div class="kpi panel"><span>Rutas</span><strong id="kpiRutas">—</strong><small>En el filtro actual</small></div>
+        <div class="kpi panel"><span>Paradas</span><strong id="kpiParadas">—</strong><small>En el filtro actual</small></div>
+        <div class="kpi panel"><span>Viajes estimados</span><strong id="kpiViajes">—</strong><small>Rutas y conexiones OD</small></div>
+        <div class="kpi panel"><span>Pasajeros/día</span><strong id="kpiPasajeros">—</strong><small>Demanda ilustrativa</small></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="section-heading"><div><h2>Viajes por ruta</h2><p>Se actualiza con los filtros y la selección.</p></div></div>
+        <div class="chart-wrap"><canvas id="graficoBarras"></canvas></div>
+      </section>
+
+      <section class="panel chart-panel">
+        <div class="section-heading"><div><h2>Demanda por periodo</h2><p>Serie temporal de ejemplo.</p></div></div>
+        <div class="chart-wrap"><canvas id="graficoTiempo"></canvas></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading"><div><h2>Matriz origen-destino</h2><p>Selecciona una conexión para resaltarla en el mapa.</p></div></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Origen</th><th>Destino</th><th>Viajes</th></tr></thead>
+            <tbody id="tablaOD"></tbody>
+          </table>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer>Geoportal demostrativo · Leaflet + GeoJSON + Chart.js · Reemplaza los datos sintéticos por datos validados.</footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+* { box-sizing: border-box; }
+:root { --navy:#15324b; --blue:#1976a8; --ink:#203040; --muted:#657789; --bg:#eef2f6; --line:#dce4eb; }
+body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; color:var(--ink); background:var(--bg); }
+.topbar { background:var(--navy); color:white; padding:18px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.topbar h1 { margin:0 0 5px; font-size:clamp(20px,2vw,28px); }
+.topbar p { margin:0; color:#d5e3ef; font-size:13px; }
+.header-tag { font-size:11px; font-weight:700; letter-spacing:.08em; border:1px solid #7290a8; border-radius:20px; padding:8px 11px; white-space:nowrap; }
+.layout { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(350px,1fr); gap:16px; padding:16px; align-items:start; }
+.panel { background:white; border:1px solid #e1e7ed; border-radius:13px; box-shadow:0 3px 12px #17324b0b; padding:16px; min-width:0; }
+.map-panel { position:sticky; top:12px; }
+.section-heading { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:13px; }
+h2 { font-size:16px; margin:0 0 5px; }
+.section-heading p { color:var(--muted); font-size:12px; margin:0; }
+.toolbar { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:12px; }
+.toolbar label { display:flex; flex-direction:column; gap:5px; font-size:11px; font-weight:700; color:#536577; flex:1; min-width:120px; }
+select { width:100%; padding:9px 10px; border:1px solid #ccd7e1; background:white; border-radius:7px; color:var(--ink); font-size:12px; }
+#mapa { height:calc(100vh - 245px); min-height:440px; max-height:760px; border-radius:9px; border:1px solid var(--line); z-index:1; }
+.map-footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; font-size:11px; color:var(--muted); padding-top:10px; }
+.side-panel { display:flex; flex-direction:column; gap:14px; min-width:0; }
+.layer-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 8px; }
+.layer-list label { display:flex; align-items:center; gap:7px; font-size:12px; cursor:pointer; }
+.layer-list input { accent-color:var(--blue); }
+.swatch { display:inline-block; width:18px; height:4px; border-radius:5px; flex:none; }
+.swatch.zonas { height:12px; background:#e9d8a6; border:1px solid #b9a36c; }
+.swatch.red { background:#9aa7b4; }
+.swatch.rutas { background:#1976a8; }
+.swatch.deseo { background:#d85c78; }
+.swatch.od { background:#8059bd; }
+.swatch.paradas { width:10px; height:10px; border-radius:50%; background:#248b62; }
+.kpi-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.kpi { padding:14px; }
+.kpi span,.kpi small { display:block; color:var(--muted); font-size:11px; }
+.kpi strong { display:block; font-size:clamp(22px,2vw,30px); color:var(--navy); margin:8px 0 5px; font-weight:750; }
+.chart-panel { padding-bottom:12px; }
+.chart-wrap { position:relative; height:220px; width:100%; }
+.table-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+th,td { text-align:left; padding:9px 7px; border-bottom:1px solid #edf0f3; white-space:nowrap; }
+th { color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.04em; }
+tbody tr { cursor:pointer; }
+tbody tr:hover { background:#f1f6fa; }
+button { border:0; background:var(--blue); color:white; padding:9px 11px; border-radius:7px; cursor:pointer; font-size:11px; font-weight:700; }
+button.secondary { background:#e9f1f7; color:#24516e; }
+footer { text-align:center; padding:10px 16px 18px; font-size:11px; color:var(--muted); }
+.leaflet-popup-content { line-height:1.55; }
+@media(max-width:1100px) { .layout { grid-template-columns:1fr; } .map-panel { position:static; } #mapa { height:55vh; min-height:380px; } }
+@media(max-width:600px) { .topbar { padding:16px; align-items:flex-start; flex-direction:column; } .layout { padding:9px; gap:10px; } .panel { padding:12px; } .layer-list { grid-template-columns:1fr 1fr; } .header-tag { display:none; } #mapa { min-height:340px; } }
+
+
+/* Buscador y selector de rutas */
+.route-selector {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  margin-bottom: 14px;
+  padding: 13px;
+  background: #f5f8fb;
+  border: 1px solid #dce5ed;
+  border-radius: 9px;
+}
+
+.route-selector label {
+  color: #536577;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.route-selector input,
+.route-selector select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccd7e1;
+  border-radius: 7px;
+  background: white;
+  font: inherit;
+  font-size: 13px;
+}
+
+.route-selector button {
+  justify-self: start;
+  margin-top: 3px;
+}
+
+/* Ficha técnica */
+.ficha-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.dato-ruta {
+  padding: 11px;
+  border: 1px solid #e3eaf0;
+  background: #f8fafc;
+  border-radius: 8px;
+  min-width: 0;
+}
+
+.dato-ruta span {
+  display: block;
+  color: #657789;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.dato-ruta strong {
+  display: block;
+  color: #15324b;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.dato-ruta.terminales {
+  margin-top: 9px;
+}
+
+@media (max-width: 500px) {
+  .ficha-grid {
+    grid-template-columns: 1fr;
+  }
+}

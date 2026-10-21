@@ -1,0 +1,97 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "OD01",
+        "origen": "Z01",
+        "destino": "Z02",
+        "viajes": 420,
+        "periodo": "Día típico"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.165,
+            19.414
+          ],
+          [
+            -99.165,
+            19.435
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "OD02",
+        "origen": "Z01",
+        "destino": "Z04",
+        "viajes": 560,
+        "periodo": "Día típico"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.165,
+            19.414
+          ],
+          [
+            -99.145,
+            19.414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "OD03",
+        "origen": "Z03",
+        "destino": "Z01",
+        "viajes": 310,
+        "periodo": "Día típico"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.166,
+            19.394
+          ],
+          [
+            -99.166,
+            19.414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "OD04",
+        "origen": "Z02",
+        "destino": "Z04",
+        "viajes": 280,
+        "periodo": "Día típico"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.165,
+            19.435
+          ],
+          [
+            -99.145,
+            19.414
+          ]
+        ]
+      }
+    }
+  ]
+}

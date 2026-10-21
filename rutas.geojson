@@ -1,0 +1,119 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "R01",
+        "nombre": "Ruta Centro-Norte",
+        "tipo_servicio": "Troncal",
+        "estado_operativo": "Activa",
+        "terminal_origen": "Terminal Centro",
+        "terminal_destino": "Terminal Norte",
+        "frecuencia_min": 8,
+        "flota_asignada": 15,
+        "viajes": 1200,
+        "pasajeros": 8500,
+        "longitud_km": 12.5,
+        "zona": "Z01"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.171,
+            19.39
+          ],
+          [
+            -99.166,
+            19.405
+          ],
+          [
+            -99.164,
+            19.42
+          ],
+          [
+            -99.163,
+            19.439
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "R02",
+        "nombre": "Ruta Oriente",
+        "tipo_servicio": "Alimentador",
+        "estado_operativo": "Activa",
+        "terminal_origen": "Terminal Otra",
+        "terminal_destino": "Terminal Sur",
+        "frecuencia_min": 15,
+        "flota_asignada": 10,
+        "viajes": 850,
+        "pasajeros": 6200,
+        "longitud_km": 9.8,
+        "zona": "Z04"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.174,
+            19.414
+          ],
+          [
+            -99.158,
+            19.414
+          ],
+          [
+            -99.145,
+            19.414
+          ],
+          [
+            -99.137,
+            19.414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "R03",
+        "nombre": "Ruta Sur",
+        "tipo_servicio": "Pretroncal",
+        "estado_operativo": "Inactiva",
+        "terminal_origen": "Terminal Perifería",
+        "terminal_destino": "Terminal Centro",
+        "frecuencia_min": 20,
+        "flota_asignada": 5,
+        "viajes": 690,
+        "pasajeros": 5100,
+        "longitud_km": 8.4,
+        "zona": "Z03"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.169,
+            19.44
+          ],
+          [
+            -99.166,
+            19.42
+          ],
+          [
+            -99.166,
+            19.401
+          ],
+          [
+            -99.166,
+            19.389
+          ]
+        ]
+      }
+    }
+  ]
+}

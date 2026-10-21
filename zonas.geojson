@@ -1,0 +1,149 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "Z01",
+        "nombre": "Centro",
+        "poblacion": 18000,
+        "demanda": 1250
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -99.175,
+              19.425
+            ],
+            [
+              -99.155,
+              19.425
+            ],
+            [
+              -99.155,
+              19.405
+            ],
+            [
+              -99.175,
+              19.405
+            ],
+            [
+              -99.175,
+              19.425
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "Z02",
+        "nombre": "Norte",
+        "poblacion": 22000,
+        "demanda": 980
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -99.175,
+              19.445
+            ],
+            [
+              -99.155,
+              19.445
+            ],
+            [
+              -99.155,
+              19.425
+            ],
+            [
+              -99.175,
+              19.425
+            ],
+            [
+              -99.175,
+              19.445
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "Z03",
+        "nombre": "Sur",
+        "poblacion": 15000,
+        "demanda": 760
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -99.175,
+              19.405
+            ],
+            [
+              -99.155,
+              19.405
+            ],
+            [
+              -99.155,
+              19.385
+            ],
+            [
+              -99.175,
+              19.385
+            ],
+            [
+              -99.175,
+              19.405
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "Z04",
+        "nombre": "Oriente",
+        "poblacion": 19500,
+        "demanda": 1120
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -99.155,
+              19.425
+            ],
+            [
+              -99.135,
+              19.425
+            ],
+            [
+              -99.135,
+              19.405
+            ],
+            [
+              -99.155,
+              19.405
+            ],
+            [
+              -99.155,
+              19.425
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

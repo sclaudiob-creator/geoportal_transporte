@@ -1,0 +1,93 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LD01",
+        "origen": "Z01",
+        "destino": "Z02",
+        "viajes": 420
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.165,
+            19.414
+          ],
+          [
+            -99.165,
+            19.435
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LD02",
+        "origen": "Z01",
+        "destino": "Z04",
+        "viajes": 560
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.165,
+            19.414
+          ],
+          [
+            -99.145,
+            19.414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LD03",
+        "origen": "Z03",
+        "destino": "Z01",
+        "viajes": 310
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.166,
+            19.394
+          ],
+          [
+            -99.166,
+            19.414
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "LD04",
+        "origen": "Z02",
+        "destino": "Z04",
+        "viajes": 280
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -99.165,
+            19.435
+          ],
+          [
+            -99.145,
+            19.414
+          ]
+        ]
+      }
+    }
+  ]
+}
